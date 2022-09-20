@@ -11,6 +11,7 @@ body {
 }
 
 .navbar .site-name {
+  margin-left: 5em;
   text-decoration: double;
   font-weight: bold;
   color: black;
@@ -71,7 +72,7 @@ nav li a:hover {
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   .mobile-menu, .mobile-exit {
     display: none;
   }
@@ -83,7 +84,7 @@ nav li a:hover {
   .navbar nav {
     display: flex;
     justify-content: space-between;
-    background: none;
+    background: white;
     position: unset;
     height: auto;
     width: 100%;
@@ -91,6 +92,10 @@ nav li a:hover {
   }
   .navbar nav ul {
     display: flex;
+    width: 500px;
+    padding-left: 10em;
+    align-content: stretch;
+    justify-content: space-between;
   }
   .navbar nav a {
     color: black;

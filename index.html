@@ -17,7 +17,7 @@
             <nav>
                 <img id="mobile-exit-id" class="mobile-exit" src="dist/images/exit.svg" alt="Close Navigation">
 
-                <ul class="primary-nav">
+                <ul class="primary-nav" style="list-style: none;">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">My favorites</a></li>
                     <li><a href="#">Contact us</a></li>
@@ -28,10 +28,24 @@
         </div>
     </div>
 
+    <table class="table table-striped">
+        <tr  class="bg-info">
+            <th>Name</th>
+            <th>Image</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Personality</th>
+        </tr>
+    
+        <tbody id="myTable">
+            
+        </tbody>
+    </table>
+
     <script>
         const mobileBtn = document.getElementById('mobile-menu-id')
-        nav = document.querySelector('nav')
-        mobileBtnExit = document.getElementById('mobile-exit-id');
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit-id');
 
         mobileBtn.addEventListener('click', () => {
             nav.classList.add('menu-btn');
@@ -39,6 +53,133 @@
         mobileBtnExit.addEventListener('click', () => {
             nav.classList.remove('menu-btn');
         })
+
+        
+        var puppyList = [
+        
+        {
+            'id' : '1',
+            'title' : 'Monty',
+            'sex' : 'Male',
+            'age' : '14',
+            'description' : 'Monty enjoys chicken treats and cuddling while watching Seinfeld.',
+            'imageId' :  'p1'
+        },
+        {
+         
+            'id' : '2',
+            'title' : 'Jubilee',
+            'sex' : 'Female',
+            'age' : '6',
+            'description' : 'Jubilee enjoys thoughtful discussions by the campfire.',
+            'imageId' :  'p2'
+        },
+        {
+            'id' : 3,
+            'title' : 'Beezy',
+            'sex' : 'Male',
+            'age' : '8',
+            'description' : 'Beezys favorite past-time is helping you choose your brand color.',
+            'imageId' :  'p3'
+        },
+        {
+            'id' : '4',
+            'title' : 'Mochi',
+            'sex' : 'Male',
+            'age' : '10',
+            'description' : 'Mochi is the perfect rubbery ducky debugging pup, always listening.',
+            'imageId' :  'p4'
+        },
+        {
+            'id' : '5',
+            'title' : 'Brewery',
+            'sex' : 'Female',
+            'age' : '12',
+            'description' : 'Brewery loves fetching you your favorite homebrew.',
+            'imageId' :  'p5'
+        },
+        {
+            'id' : '6',
+            'title' : 'Lucy',
+            'sex' : 'Female',
+            'age' : '8',
+            'description' : 'Picture yourself in a boat on a river, Lucy is a pup with kaleoscope eyes.',
+            'imageId' :  'p6'
+        },
+        {
+            'id' : '7',
+            'title' : 'Astro',
+            'sex' : 'Male',
+            'age' : '10',
+            'description' : 'Is it a bird? A plane? No, its Astro blasting off into your heart!',
+            'imageId' :  'p7'
+        },
+        {
+            'id' : '8',
+            'title' : 'Boo',
+            'sex' : 'Female',
+            'age' : '9',
+            'description' : 'Boo is just a teddy bear in disguise. What he lacks in grace, he makes up in charm.',
+            'imageId' :  'p8'
+        },
+        {
+            'id' : '9',
+            'title' : 'Pippa',
+            'sex' : 'Male',
+            'age' : '7',
+            'description' : 'Pippa likes to look out the window and write pup-poetry.',
+            'imageId' :  'p9'
+        },
+        {
+            'id' : '10',
+            'title' : 'Coco',
+            'sex' : 'Female',
+            'age' : '10',
+            'description' : 'Coco enjoys getting pampered at the local puppy spa.',
+            'imageId' :  'p10'
+        },
+        {
+            'id' : '11',
+            'title' : 'Brody',
+            'sex' : 'Male',
+            'age' : '13',
+            'description' : 'Brody is a good boy, waiting for your next command.',
+            'imageId' :  'p11'
+        },
+        {
+            'id' : '12',
+            'title' : 'Stella',
+            'sex' : 'Female',
+            'age' : '14',
+            'description' : 'Stella! Calm and always up for a challenge, shes the perfect companion.',
+            'imageId' :  'p12'
+        },
+        ]
+
+        buildTable(puppyList)
+
+
+
+function buildTable(data){
+    var table = document.getElementById('myTable')
+
+    for (var i = 0; i < data.length; i++){
+        var row = `<tr>
+                        <td>${data[i].title}</td>
+                        <td>
+                             <img src="dist/images/${data[i].imageId}.jpg" alt="Doggo image"
+                             width="200" height="240">
+                        </td>
+                        <td>${data[i].sex}</td>
+                        <td>${data[i].age}</td>
+                        <td>${data[i].description}</td>
+                  </tr>`
+        table.innerHTML += row
+
+
+    }
+}
+        
     </script>
 
 
